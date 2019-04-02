@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Interventions Fetcher</title>
+		<meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+		<meta charset="UTF-8">
+	  <!-- Compiled and minified CSS -->
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<script src="vue.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	</head>
+	<body>
+		<div id='myapp'>
+			<table border='1' width='80%' style='border-collapse: collapse;'>
+				<tr>
+          <th>DATE</th>
+          <th>PRENOM DEMANDEUR</th>
+					<th>NOM DEMANDEUR</th>
+					<th>SOCIETE</th>
+          <th>EMAIL</th>
+          <th>NUMERO</th>
+					<th>ADRESSE</th>
+          <th>NOM INTERVENANT</th>
+					<th>PRENOM INTERVENANT</th>
+					<th>SIGNE</th>
+				</tr>
+
+				<!-- Add -->
+				<tr>
+					<td><input type='text' v-model='date'></td>
+					<td><input type='text' v-model='nameDemandeur'></td>
+					<td><input type='text' v-model='surnameDemandeur'></td>
+					<td><input type='text' v-model='company'></td>
+					<td><input type='text' v-model='email'></td>
+					<td><input type='text' v-model='number'></td>
+					<td><input type='text' v-model='address'></td>
+					<td><input type='text' v-model='nameIntervenant'></td>
+					<td><input type='text' v-model='surnameIntervenant'></td>
+					<td><input type='text' v-model='isSigned'></td>
+					<td><input type='button' value='Add' @click='addRecord();'></td>
+				</tr>
+
+				<!-- Update/Delete -->
+				<tr v-for='(intervention,index) in interventions'>
+					<td><input type='text' v-model='intervention.date'></td>
+					<td><input type='text' v-model='intervention.nameDemandeur'></td>
+					<td><input type='text' v-model='intervention.surnameDemandeur'></td>
+					<td><input type='text' v-model='intervention.company'></td>
+					<td><input type='text' v-model='intervention.email'></td>
+					<td><input type='text' v-model='intervention.number'></td>
+					<td><input type='text' v-model='intervention.address'></td>
+					<td><input type='text' v-model='intervention.nameIntervenant'></td>
+					<td><input type='text' v-model='intervention.surnameIntervenant'></td>
+					<td><input type='text' v-model='intervention.isSigned'></td>
+					<td><input type='button' value='Update' @click='updateRecord(index,user.id);'>&nbsp;
+					<input type='button' value='Delete' @click='deleteRecord(index,user.id)'></td>
+				</tr>
+			 </table>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
