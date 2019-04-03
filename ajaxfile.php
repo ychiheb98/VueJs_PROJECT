@@ -32,8 +32,8 @@ if($request == 2){
 	$surnameIntervenant = $data->surnameIntervenant;
 	$isSigned = $data->isSigned;
 
-  mysqli_query($con,"INSERT INTO intervention(`date`, `nameDemandeur`, `surnameDemandeur`,`company`, `email`, `number`, `address`, `nameIntervenant`, `surnameIntervenant`, `isSigned`) VALUES('".$date."','".$nameDemandeur."','".$surnameDemandeur.",
-	'".$company."',".$email."','".$number."','".$address.",".$nameIntervenant."','".$surnameIntervenant."','".$isSigned."')");
+  mysqli_query($con,"INSERT INTO intervention(`date`, `nameDemandeur`, `surnameDemandeur`,`company`, `email`, `number`, `address`, `nameIntervenant`, `surnameIntervenant`, `isSigned`)
+  VALUES('".$date."','".$nameDemandeur."','".$surnameDemandeur.",'".$company."',".$email."','".$number."','".$address.",".$nameIntervenant."','".$surnameIntervenant."','".$isSigned."')");
 
   exit;
 }
@@ -54,8 +54,8 @@ if($request == 3){
 	$isSigned = $data->isSigned;
 
   mysqli_query($con,"UPDATE `intervention` SET `company`='".$company."', `nameDemandeur`='".$nameDemandeur."',
-	,`surnameDemandeur`='".$surnameDemandeur."',`$email`='".$email."', `$number`='".$number."' ,
-	`name$addressDemandeur`='".$address."',`$nameIntervenant`='".$nameIntervenant."',`$surnameIntervenant`='".$surnameIntervenant."'
+	,`surnameDemandeur`='".$surnameDemandeur."',`email`='".$email."', `number`='".$number."' ,
+	`address`='".$address."',`nameIntervenant`='".$nameIntervenant."',`surnameIntervenant`='".$surnameIntervenant."'
 	,isSigned ='".$isSigned."' WHERE id=".$id);
 
   echo "Update successfully";
